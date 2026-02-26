@@ -7,7 +7,7 @@ param environmentName string
 
 @minLength(1)
 @description('Primary location for all resources')
-@allowed(['australiaeast', 'eastasia', 'eastus', 'eastus2', 'northeurope', 'southcentralus', 'southeastasia', 'swedencentral', 'uksouth', 'westus2', 'eastus2euap'])
+@allowed(['australiaeast', 'centralus', 'eastasia', 'eastus', 'eastus2', 'northeurope', 'southeastasia', 'swedencentral', 'uksouth', 'westus2'])
 @metadata({
   azd: {
     type: 'location'
@@ -67,7 +67,7 @@ module processor './app/processor.bicep' = {
     applicationInsightsName: monitoring.outputs.applicationInsightsName
     appServicePlanId: appServicePlan.outputs.id
     runtimeName: 'dotnet-isolated'
-    runtimeVersion: '8.0'
+    runtimeVersion: '10.0'
     storageAccountName: storage.outputs.name
     identityId: processorUserAssignedIdentity.outputs.identityId
     identityClientId: processorUserAssignedIdentity.outputs.identityClientId
